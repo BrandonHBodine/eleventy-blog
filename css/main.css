@@ -1,7 +1,7 @@
 /* Color customization */
 :root {
-  --primary: #f9c412;
-  --primary-dark: #e7bf60;
+  --primary: #00da8ce0;
+  --primary-dark: #054931e0;
 }
 
 .test-dead-code-elimination-sentinel {
@@ -112,6 +112,33 @@ header aside {
 
 #posts li {
   margin-bottom: 0.5em;
+}
+
+#find-me {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  padding: 1.5em;
+  width: 37.5em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#find-me ul {
+  list-style-type: none;
+  margin: 0 0.5em;
+  padding: 0;
+}
+
+#find-me li {
+  padding: 0.25em;
+}
+
+footer h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
 }
 
 /* https://github.com/rsms/inter/blob/master/LICENSE.txt
@@ -769,7 +796,7 @@ th {
   vertical-align: top;
 }
 thead th {
-  border-bottom: 1px solid #f9c412;
+  border-bottom: 1px solid #00da8ce0;
 }
 table {
   display: table;
@@ -802,7 +829,7 @@ kbd {
   color: #7ec699;
 }
 mark {
-  background: #f9c412;
+  background: #00da8ce0;
   padding: 0 0.3em;
 }
 h1,
@@ -816,10 +843,10 @@ h6 {
 h2,
 h4,
 h6 {
-  font-style: italic;
+  font-style: inherit;
 }
 a {
-  color: #f9c412;
+  color: #00da8ce0;
   text-decoration: none;
 }
 a:hover {
@@ -953,7 +980,7 @@ input[type="submit"][disabled] {
 button:not([disabled]),
 button[type="submit"],
 input[type="submit"] {
-  background: #f9c412;
+  background: #00da8ce0;
   color: #181818;
 }
 button:not([disabled]):hover,
@@ -1007,7 +1034,7 @@ video {
 }
 body {
   font-family: var(--font-family);
-  background: #181818;
+  background: #230051;
   color: #eee;
 }
 section {
@@ -1095,10 +1122,10 @@ main {
   border-top: 0.5px solid #ccc;
 }
 footer {
-  background: rgba(0, 0, 0, 0.8);
+  border-top: .5px solid #ccc;
+  background: #230051;
   color: #fff;
   padding: 3em;
-  text-align: center;
 }
 footer > * {
   margin: 1.5em;
@@ -1138,10 +1165,10 @@ dd {
   margin-left: 2.25em;
 }
 dd + dt {
-  border-top: 1px solid #f9c412;
+  border-top: 1px solid #00da8ce0;
 }
 blockquote {
-  border-left: 1px solid #f9c412;
+  border-left: 1px solid #00da8ce0;
   padding: 0 1.5em;
   margin: 1.5em 0 1.5em 1.5em;
 }

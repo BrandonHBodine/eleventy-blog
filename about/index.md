@@ -7,6 +7,5 @@ eleventyNavigation:
   order: 3
 ---
 
-I am a person that writes stuff.
+Hello, I'm Brandon. A person living in Colorado and attempting to engineer software. I'm mostly focused on the web and building websites. I have been in e-commerce for around 8 years now and am always wondering what's going to happen next.
 
-This blog template is based on [eleventy-high-performance-blog](https://www.industrialempathy.com/posts/eleventy-high-performance-blog/) which itself is based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
