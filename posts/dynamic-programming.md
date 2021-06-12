@@ -1,6 +1,6 @@
 ---
-title: This is my first post.
-description: This is a post on My Blog about agile frameworks.
+title: Dynamic Programming
+description: Dynamic Programming - find the answer by finding answers.
 date: Last Modified
 tags: [posts] 
 layout: layouts/post.njk

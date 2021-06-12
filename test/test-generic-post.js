@@ -13,12 +13,11 @@ const GA_ID = require("../_data/googleanalytics.js")();
  * They are useful because I tend to break the things they test all the time.
  */
 
-describe("check build output for a generic post", () => {
+describe("check build output for a generic post - using technical study guide post", () => {
   describe("sample post", () => {
-    const POST_FILENAME = "_site/posts/firstpost/index.html";
+    const POST_FILENAME = "_site/posts/technical-study-guide/index.html";
     const URL = metadata.url;
-    const POST_URL = URL + "/posts/firstpost/";
-
+    const POST_URL = URL + "/posts/technical-study-guide/";
     if (!existsSync(POST_FILENAME)) {
       it("WARNING skipping tests because POST_FILENAME does not exist", () => {});
       return;
@@ -44,14 +43,14 @@ describe("check build output for a generic post", () => {
     });
 
     it("should have metadata", () => {
-      assert.equal(select("title"), "This is my first post.");
+      assert.equal(select("title"), "Technical Study Guide");
       expect(select("meta[property='og:image']", "content")).to.match(
         /\/img\/remote\/\w+.jpg/
       );
       assert.equal(select("link[rel='canonical']", "href"), POST_URL);
       assert.equal(
         select("meta[name='description']", "content"),
-        "This is a post on My Blog about agile frameworks."
+        "Guide for learning the fundamentals of CS along with other fun stuff."
       );
     });
 
@@ -114,69 +113,59 @@ describe("check build output for a generic post", () => {
     });
 
     it("should have a header", () => {
-      expect(select("header > h1")).to.equal("This is my first post.");
+      expect(select("header > h1")).to.equal("Technical Study Guide");
       expect(select("header aside")).to.match(/\d+ min read./);
       expect(select("header dialog", "id")).to.equal("message");
     });
 
     it("should have a published date", () => {
-      expect(select("article time")).to.equal("01 May 2018");
-      expect(select("article time", "datetime")).to.equal("2018-05-01");
-    });
-
-    it("should link to twitter with noopener", () => {
-      const twitterLinks = Array.from(doc.querySelectorAll("a")).filter((a) =>
-        a.href.startsWith("https://twitter.com")
-      );
-      for (let a of twitterLinks) {
-        expect(a.rel).to.contain("noopener");
-        expect(a.target).to.equal("_blank");
-      }
+      expect(select("article time")).to.equal("08 Jun 2021");
+      expect(select("article time", "datetime")).to.equal("2021-06-08");
     });
 
     describe("body", () => {
-      it("should have images", () => {
-        const images = Array.from(
-          doc.querySelectorAll("article :not(aside) picture img")
-        );
-        const pictures = Array.from(
-          doc.querySelectorAll("article :not(aside) picture")
-        );
-        const metaImage = select("meta[property='og:image']", "content");
-        expect(images.length).to.greaterThan(0);
-        expect(pictures.length).to.greaterThan(0);
-        const img = images[0];
-        const picture = pictures[0];
-        const sources = Array.from(picture.querySelectorAll("source"));
-        expect(sources).to.have.length(3);
-        expect(img.src).to.match(/^\/img\/remote\/\w+-1920w\.jpg$/);
-        expect(metaImage).to.match(new RegExp(URL));
-        expect(metaImage).to.match(/\/img\/remote\/\w+\.jpg$/);
-        const avif = sources.shift();
-        const webp = sources.shift();
-        const jpg = sources.shift();
-        expect(jpg.srcset).to.match(
-          /\/img\/remote\/\w+-1920w.jpg 1920w, \/img\/remote\/\w+-1280w.jpg 1280w, \/img\/remote\/\w+-640w.jpg 640w, \/img\/remote\/\w+-320w.jpg 320w/
-        );
-        expect(webp.srcset).to.match(
-          /\/img\/remote\/\w+-1920w.webp 1920w, \/img\/remote\/\w+-1280w.webp 1280w, \/img\/remote\/\w+-640w.webp 640w, \/img\/remote\/\w+-320w.webp 320w/
-        );
-        expect(avif.srcset).to.match(
-          /\/img\/remote\/\w+-1920w.avif 1920w, \/img\/remote\/\w+-1280w.avif 1280w, \/img\/remote\/\w+-640w.avif 640w, \/img\/remote\/\w+-320w.avif 320w/
-        );
-        expect(jpg.type).to.equal("image/jpeg");
-        expect(webp.type).to.equal("image/webp");
-        //expect(avif.type).to.equal("image/avif");
-        expect(jpg.sizes).to.equal("(max-width: 608px) 100vw, 608px");
-        expect(webp.sizes).to.equal("(max-width: 608px) 100vw, 608px");
-        expect(img.height).to.match(/^\d+$/);
-        expect(img.width).to.match(/^\d+$/);
-        expect(img.getAttribute("loading")).to.equal("lazy");
-        expect(img.getAttribute("decoding")).to.equal("async");
-        // JSDom fails to parse the style attribute properly
-        expect(img.outerHTML).to.match(/svg/);
-        expect(img.outerHTML).to.match(/filter/);
-      });
+      // it("should have images", () => {
+      //   const images = Array.from(
+      //     doc.querySelectorAll("article :not(aside) picture img")
+      //   );
+      //   const pictures = Array.from(
+      //     doc.querySelectorAll("article :not(aside) picture")
+      //   );
+      //   const metaImage = select("meta[property='og:image']", "content");
+      //   expect(images.length).to.greaterThan(0);
+      //   expect(pictures.length).to.greaterThan(0);
+      //   const img = images[0];
+      //   const picture = pictures[0];
+      //   const sources = Array.from(picture.querySelectorAll("source"));
+      //   expect(sources).to.have.length(3);
+      //   expect(img.src).to.match(/^\/img\/remote\/\w+-1920w\.jpg$/);
+      //   expect(metaImage).to.match(new RegExp(URL));
+      //   expect(metaImage).to.match(/\/img\/remote\/\w+\.jpg$/);
+      //   const avif = sources.shift();
+      //   const webp = sources.shift();
+      //   const jpg = sources.shift();
+      //   expect(jpg.srcset).to.match(
+      //     /\/img\/remote\/\w+-1920w.jpg 1920w, \/img\/remote\/\w+-1280w.jpg 1280w, \/img\/remote\/\w+-640w.jpg 640w, \/img\/remote\/\w+-320w.jpg 320w/
+      //   );
+      //   expect(webp.srcset).to.match(
+      //     /\/img\/remote\/\w+-1920w.webp 1920w, \/img\/remote\/\w+-1280w.webp 1280w, \/img\/remote\/\w+-640w.webp 640w, \/img\/remote\/\w+-320w.webp 320w/
+      //   );
+      //   expect(avif.srcset).to.match(
+      //     /\/img\/remote\/\w+-1920w.avif 1920w, \/img\/remote\/\w+-1280w.avif 1280w, \/img\/remote\/\w+-640w.avif 640w, \/img\/remote\/\w+-320w.avif 320w/
+      //   );
+      //   expect(jpg.type).to.equal("image/jpeg");
+      //   expect(webp.type).to.equal("image/webp");
+      //   //expect(avif.type).to.equal("image/avif");
+      //   expect(jpg.sizes).to.equal("(max-width: 608px) 100vw, 608px");
+      //   expect(webp.sizes).to.equal("(max-width: 608px) 100vw, 608px");
+      //   expect(img.height).to.match(/^\d+$/);
+      //   expect(img.width).to.match(/^\d+$/);
+      //   expect(img.getAttribute("loading")).to.equal("lazy");
+      //   expect(img.getAttribute("decoding")).to.equal("async");
+      //   // JSDom fails to parse the style attribute properly
+      //   expect(img.outerHTML).to.match(/svg/);
+      //   expect(img.outerHTML).to.match(/filter/);
+      // });
 
       it("should have json-ld", () => {
         const json = select("script[type='application/ld+json']");
@@ -186,7 +175,7 @@ describe("check build output for a generic post", () => {
         const obj = JSON.parse(json);
         expect(obj.url).to.equal(POST_URL);
         expect(obj.description).to.equal(
-          "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster..."
+          "A collection of resources for learning more about data structures and algorithms along with other skills that relate to computer science,..."
         );
         expect(obj.image.length).to.be.greaterThan(0);
         obj.image.forEach((url, index) => {

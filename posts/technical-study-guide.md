@@ -1,9 +1,15 @@
 ---
 title: Technical Study Guide
 description: Guide for learning the fundamentals of CS along with other fun stuff.
-date: Last Modified
+date: 2021-06-08
 tags: [posts]
 layout: layouts/post.njk
+image: https://pbs.twimg.com/profile_images/813535358386376704/MNi9ZzXE_400x400.jpg
+eleventyNavigation:
+  key: Tech Study Guide
+  order: 4
+---
+
 ---
 
 A collection of resources for learning more about data structures and algorithms along with other skills that relate to computer science, web development, machine learning, and whatever I feel compelled to learn about.
@@ -16,8 +22,8 @@ These resources are unfortunately not all free. To get the most out of my time I
 
 ### Books
 
-- <a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850">Cracking the Coding Interview</a></li>
-- <a href="https://www.amazon.com/gp/product/3030542556/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">The Algorithm Design Manual</a><
+- <a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850">Cracking the Coding Interview</a>
+- <a href="https://www.amazon.com/gp/product/3030542556/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">The Algorithm Design Manual</a>
 - <a href="https://www.amazon.com/gp/product/0262033844/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1">Introduction to Algorithms</a>
 
 ### Video Series
@@ -65,3 +71,5 @@ There will be a page dedicated to each subject. Some maybe be under the umbrella
 - Good to Know Algos/Problems
 - Sorting / Merge Sort
 - Searching
+
+![An image](../../img/colorado-map.jpg)

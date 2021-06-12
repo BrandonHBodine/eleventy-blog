@@ -2,7 +2,7 @@
   "title": "A place for things.",
   "url": "https://www.brandonbodine.com",
   "domain": "brandonbodine.com",
-  "description": "Hi, I'm Brandon. I'm a software engineer trying to figure out things. I'm interested in a broad range of things.",
+  "description": "Hi, I'm Brandon. I'm a software engineer trying to figure out things. I'm interested in a broad range of things and this is my place to put them.",
   "genre": "Insert a schema.org genre",
   "googleAnalyticsId": "GA ID. Update me. Note, that this is not compatible with the not-yet-commonly used version 4 of Google Analytics",
   "sendWebVitals": false,
